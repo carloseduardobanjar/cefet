@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Simulação 02.1</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+</html>
+<body>
+	<ul>
+ 		<li><a href="../index.html">PÁGINA INICIAL</a></li>
+  		<li><a href="simulação01.html">SIMULAÇÃO 01</a></li>
+  		<li><a href="simulação02.2.html">SIMULAÇÃO 02.2</a></li>
+  		<li><a href="simulação03.html">SIMULAÇÃO 03</a></li>
+	</ul>
+		<!-- <h1>RELAÇÕES</h1>
+		<p class="subtitulo">Confira as relações diretas na reação da água.</p>-->
+		<div class= "container">
+			<div class= "conteudo">
+				<!-- O2(v) > H2O(v), H2(v) > H2O(v) -->
+				<h2>VEJA A RELAÇÃO DE O2 E H2O</h2>
+				<p><strong>Acompanhe as simulações</strong> para facilitar a estequiometria.</p>
+				<div id= "resultado">
+					<p>Qual volume que participa da reação?</p>
+					<p><input type="number" id="massa" placeholder="Volume:" /></p>
+					<input type="radio" name="teste" id="1"><label for="1" class="check">Volume de O2 para calcular o volume de H2O</label><br>
+					<input type="radio" name="teste" id="2"><label for="2" class="check">Volume de H2O para calcular o volume de O2</label><br>
+				</div>
+
+				<div id="botao">
+					<br><br><input type="button" class="button" value="CALCULAR" onclick="verificaChecks()">
+				</div>
+			</div>
+		</div>
+		<div class='footer'>
+			<p class = "especial"> CARLOS EDUARDO BANJAR E GABRIEL FERNANDES </p>
+		</div>
+</body>
+<script>
+
+	function verificaChecks(){
+		let radio1 = document.getElementById('1');
+		let radio2 = document.getElementById('2');
+		if(radio1.checked) {
+			var r = calculaH2O();
+		} else {
+			if(radio2.checked){
+				var r = calculaO2();
+			}
+			else 
+				alert("Selecione o tipo de conversão");
+		}
+	}
+	
+	function calculaH2O(){
+		var qtdO2 = parseFloat(document.getElementById("massa").value); 
+		var qtdH2O = qtdO2 * 2;
+		document.getElementById("resultado").innerHTML = "1º - Montar a regra de três: <br>22.4 L de O2 --> 44.8 L de H2O<br>" + qtdO2 + " L de O2--> n L de H2O" + "<br><br>2º - Multiplicar cruzado: 22.4 x n = 44.8 x " + qtdO2 + "<br><br>3º - Calcular: <strong>n = " + qtdH2O + " L</strong>";  
+		document.getElementById("botao").innerHTML = "<br><br><button class='button' onclick='voltar()'>Voltar</button>"
+	}
+
+	function calculaO2(){
+		var qtdH2O = parseFloat(document.getElementById("massa").value); 
+		var qtdO2 = qtdH2O / 2;
+		document.getElementById("resultado").innerHTML = "1º - Montar a regra de três: <br>22.4 L de O2 --> 44.8 L de H2O<br>" + "n L de O2 --> " + qtdH2O +" L de H2O" + "<br><br>2º - Multiplicar cruzado: 22.4 x " + qtdH2O + " = 44.8 x n <br><br>3º - Calcular: <strong>n = " + qtdO2 + " L</strong>";  
+		document.getElementById("botao").innerHTML = "<br><br><button class='button' onclick='voltar()'>Voltar</button>"
+	}
+
+	function voltar(){
+		document.location.reload(false);
+	}
+
+</script>
+</html>
+

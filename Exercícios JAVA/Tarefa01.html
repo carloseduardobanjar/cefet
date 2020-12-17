@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercícios da aula 04</title>
+</head>
+<body>
+	<p>Questão 01:</p>
+	<p id="resposta01"></p>
+	<p>Questão 02:</p>
+	<ul id="lista"></ul>
+	<p>Questão 03:</p>
+	<p id="resposta03"></p>
+	<p>Questão 04:</p>
+	<p id="resposta04"></p>
+	<p>Questão 05:</p>
+	<p id="resposta05"></p>
+
+</body>
+
+<script>
+
+	//questão 01
+	var endereco = {
+	 rua: "Rua dos pinheiros",
+	 numero: 1293,
+	 bairro: "Centro",
+	 cidade: "São Paulo",
+	 uf: "SP"
+	};
+	
+
+	var resultado01 = "O usuário mora em ";
+	resultado01 += endereco.cidade;
+	resultado01 += " / "
+	resultado01 += endereco.uf;
+	resultado01 += ", no bairro ";
+	resultado01 += endereco.bairro;
+	resultado01 += ", na ";
+	resultado01 += endereco.rua;
+	resultado01 += " com no ";
+	resultado01 += endereco.numero;
+	resultado01 += ".";
+
+	document.getElementById("resposta01").innerHTML = resultado01;
+
+	//questão 02
+	function pares(x, y){
+		var pares = [];
+		for(i=x; i<=y; i++){
+			if(i%2==0){
+				pares.push(i); //acrescenta um elemento na última posição do array
+			}
+		}
+		return pares.toString(); //transforma em string
+	}
+	var result = pares(3,12);
+	var resultado_array = result.split(","); //transforma em array
+
+	//[4, 6, 8, 10, 12]
+	resultado_array.forEach(function(numero){
+		var elemento_li = document.createElement("LI"); // <li></li>
+		elemento_li.innerHTML= numero; // <li>4 ou 6 ou 8 ou 10 ... </li>
+		document.getElementById("lista").appendChild(elemento_li); //<ul id="lista"><li>novo</li></ul>
+	});
+
+	//questão 03
+	function temHabilidade(skills){
+		var n = skills.indexOf("Javascript");
+		if(n >= 0)
+			document.getElementById("resposta03").innerHTML = "existe";
+		else 
+			document.getElementById("resposta03").innerHTML = "não existe";
+	}
+	
+	var skills = ["Javascript", "ReactJS", "React Native"];
+	temHabilidade(skills);
+
+	//questão 04
+	function experiencia(anos) {
+		if(anos == 0 || anos == 1){
+    		return 'Iniciante';
+		} else if(anos > 1 && anos <= 3){
+    		return 'Intermediário';
+  		} else if(anos >= 4 && anos <= 6){
+  			return 'Avançado';
+  		} else {
+    		return 'Jedi Master';
+  		}
+	}
+	var anosEstudo = 7;
+	var resultado04 = experiencia(anosEstudo);
+	document.getElementById("resposta04").innerHTML = resultado04;
+
+	//questão 05
+	var usuarios = [
+		{
+			nome: "Diego",
+			habilidades: ["Javascript", "ReactJS", "Redux"]
+		},
+		{
+			nome: "Gabriel",
+			habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+		}
+	];
+	
+	for (usuario of usuarios){
+    	var resultado05 = 'O ' + usuario.nome + ' possui as habilidades: ' + usuario.habilidades.join(", ") + '.';
+    }
+    document.getElementById("resposta05").innerHTML = resultado05;
+</script>
+</html>

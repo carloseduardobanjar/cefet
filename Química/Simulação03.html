@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Simulação 03</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+</html>
+<body>
+	<ul>
+ 		<li><a href="../index.html">PÁGINA INICIAL</a></li>
+  		<li><a href="simulação01.html">SIMULAÇÃO 01</a></li>
+  		<li><a href="simulação02.1.html">SIMULAÇÃO 02.1</a></li>
+		<li><a href="simulação02.2.html">SIMULAÇÃO 02.2</a></li>
+	</ul>
+		<!-- <h1>RELAÇÕES</h1>
+		<p class="subtitulo">Confira as relações diretas na reação da água.</p>-->
+		<div class= "container">
+			<div class= "conteudo">
+				<h2>VEJA A RELAÇÃO DE O2 E H2O</h2>
+				<p><strong>Acompanhe as simulações</strong> para facilitar a estequiometria.</p>
+				<div id= "resultado">
+					<p>Quantos mol de H2 participam da reação?</p>
+					<p><input type="number" id="massaH2" placeholder="Mol:" /></p>
+					<p>Quantos mol de O2 participam da reação?</p>
+					<p><input type="number" id="massaO2" placeholder="Mol:" /></p>
+				</div>
+				<div id="botao">
+					<br><br><input type="button" class="button" value="CALCULAR" onclick="calculaMol()">
+				</div>
+			</div>
+		</div>
+		<div class='footer'>
+			<p class = "especial"> CARLOS EDUARDO BANJAR E GABRIEL FERNANDES </p>
+		</div>
+</body>
+<script>
+	
+	function calculaMol(){
+		var qtdO2 = parseFloat(document.getElementById("massaO2").value);
+		var qtdH2 = parseFloat(document.getElementById("massaH2").value);
+
+		var O2qtdH2O = qtdO2 * 2;
+		var H2qtdH2O = qtdH2;
+
+		if (H2qtdH2O>O2qtdH2O){
+			document.getElementById("resultado").innerHTML = "Agente limitante: O2" + "<br><br>Quantidade do reagente limitante: " + qtdO2 + " mol" + "<br><br>Para calcular a quantidade do produto, usa-se o agente limitante. <br><br>1 mol de O2 --> 2 mol de H2O<br> " + qtdO2 + " mol --> n mol de H2O<br><br> <strong>n = "  + O2qtdH2O + " mol</strong>";  
+		}
+		else if(H2qtdH2O<O2qtdH2O){
+			document.getElementById("resultado").innerHTML = "Agente limitante: H2" + "<br><br>Quantidade do reagente limitante: " + qtdH2 + " mol" + "<br><br>Para calcular a quantidade do produto, usa-se o agente limitante. <br><br>1 mol de H2 --> 1 mol de H2O<br> " + qtdH2 + " mol --> n mol de H2O<br><br> <strong>n = "  + H2qtdH2O + " mol</strong>"; 
+		}
+		else{
+			document.getElementById("resultado").innerHTML = "Não há agente limitante";  
+		}
+
+		document.getElementById("botao").innerHTML = "<br><br><button class='button' onclick='voltar()'>Voltar</button>"
+	}
+
+	function voltar(){
+		document.location.reload(false);
+	}
+</script>
+</html>
+
