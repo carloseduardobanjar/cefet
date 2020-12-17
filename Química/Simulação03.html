@@ -50,7 +50,7 @@
 			document.getElementById("resultado").innerHTML = "Agente limitante: H2" + "<br><br>Quantidade do reagente limitante: " + qtdH2 + " mol" + "<br><br>Para calcular a quantidade do produto, usa-se o agente limitante. <br><br>1 mol de H2 --> 1 mol de H2O<br> " + qtdH2 + " mol --> n mol de H2O<br><br> <strong>n = "  + H2qtdH2O + " mol</strong>"; 
 		}
 		else{
-			document.getElementById("resultado").innerHTML = "Não há agente limitante";  
+			document.getElementById("resultado").innerHTML = "Não há agente limitante" + "<br><br>Para calcular a quantidade do produto, não importa o reagente. <br><br>1 mol de H2 --> 1 mol de H2O<br> " + qtdH2 + " mol de H2 --> n mol de H2O<br><br> <strong>n = "  + H2qtdH2O + " mol</strong>"; 
 		}
 
 		document.getElementById("botao").innerHTML = "<br><br><button class='button' onclick='voltar()'>Voltar</button>"
