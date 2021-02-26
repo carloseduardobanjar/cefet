@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/meucss.css">
+    <title>Estudo dos gases e os pneus</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    	$(function(){ //document.ready
+			$("#executa1").click(function(){
+				if($("#exercicio1_a").is(":checked"))
+					$("#ativ01").css("background-color","#ffdfd4");
+				if ($("#exercicio1_b").is(":checked"))
+					$("#ativ01").css("background-color","#ffdfd4");
+				if ($("#exercicio1_c").is(":checked"))
+					$("#ativ01").css("background-color","#ffdfd4");
+				if ($("#exercicio1_d").is(":checked"))
+					$("#ativ01").css("background-color","#dbead5");
+				if ($("#exercicio1_e").is(":checked"))
+					$("#ativ01").css("background-color","#ffdfd4");
+				$("#resultado1").html("</br>Usando a equação de Clapeyron, temos: P * 0,1 = 0,5 * 8,3 * 300<br/> P = 12450 Pa" );
+			})
+
+			$("#executa2").click(function(){
+				if($("#exercicio2_a").is(":checked"))
+					$("#ativ02").css("background-color","#ffdfd4");
+				if ($("#exercicio2_b").is(":checked"))
+					$("#ativ02").css("background-color","#dbead5");
+				if ($("#exercicio2_c").is(":checked"))
+					$("#ativ02").css("background-color","#ffdfd4");
+				if ($("#exercicio2_d").is(":checked"))
+					$("#ativ02").css("background-color","#ffdfd4");
+				if ($("#exercicio2_e").is(":checked"))
+					$("#ativ02").css("background-color","#ffdfd4");
+				$("#resultado2").html("</br>A forma de aumentar a pressão à temperatura constante é por meio da pressurização. Assim, o volume diminui e, consequentemente, a massa específica aumenta na mesma proporção, já que ela é a razão entre massa e volume.");
+			})
+
+			$("#executa3").click(function(){
+				if($("#exercicio3_a").is(":checked"))
+					$("#ativ03").css("background-color","#dbead5");
+				if ($("#exercicio3_b").is(":checked"))
+					$("#ativ03").css("background-color","#ffdfd4");
+				if ($("#exercicio3_c").is(":checked"))
+					$("#ativ03").css("background-color","#ffdfd4");
+				if ($("#exercicio3_d").is(":checked"))
+					$("#ativ03").css("background-color","#ffdfd4");
+				if ($("#exercicio3_e").is(":checked"))
+					$("#ativ03").css("background-color","#ffdfd4");
+				$("#resultado3").html("<br/>Primeiramente, aplica-se a equação de Clapeyron para os dois momentos em função da pressão.<br/>1a: P = 287 / 32<br/>2a: P = 24,6 * m / 96 <br/>Igualando as duas, temos: m = 35g <br/>Como o frasco já contém 10g, basta adicionar 25g");
+			})
+			
+		}) //fim do document.ready
+    	
+    </script>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <div class="container">
+        <a href="#" class="navbar-brand"><img src="img/icone4.png"></a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarConteudo">
+          Menu
+        </button>
+        <div class="collapse navbar-collapse" id="navbarConteudo">
+          <ul class="navbar-nav mr-auto">
+            <li class="dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Descubra
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#sobre" class="dropdown-item">Variáveis de estado</a></li>
+                <li><a href="#caracteristicas" class="dropdown-item">Transformações</a></li>
+                <li><a href="#cards" class="dropdown-item">Exercícios</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Descubra mais sistemas gasosos
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#">#</a></li>
+                <li><a href="#">#</a></li>
+                <li><a href="#">#</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div> <!-- fim .collapse -->
+      </div> <!-- fim .container -->
+    </nav>
+	<main>
+		<section class="jumbotron">
+		<div class="container">
+			<h1>Estudo dos gases</h1>
+			<p>Química</p>
+			<form class="input-group">
+				<input type="text" class="form-control"
+					placeholder="Encontre o que você quer">
+					
+				<button class="btn btn-primary"> Pesquisar </button>
+			</form>
+		</div>
+		</section><!--Fim Jumbotron-->
+    <section class="container">
+      <h2 class="text-center">Imagens</h2>
+      <p class="text-center"> Você sabe o que é o estudo dos gases? Esse estudo compreende a análise da matéria quando se apresenta no estado gasoso, sendo este o seu estado termodinâmico mais simples. Gases são compostos moleculares que possuem características como a grande compressibilidade e a capacidade de se expandirem, estes compostos não possuem volume fixo, são miscíveis entre si e em qualquer proporção. Pense em um pneu, por exemplo.</p>
+    <div class="row">
+      <a href="https://www.preparaenem.com/fisica/exemplos-transformacoes-gasosas.htm" class="col-sm-6 col-md-4 col-lg-3">
+        <figure>
+          <img src="img/img1.png"
+              class="img-thumbnail">
+          <figcaption>
+            preparaenem
+          </figcaption>
+        </figure>
+      </a>
+      <a href="https://blog.belgobekaert.com.br/agro/criacao-de-gado-nelore/" class="col-sm-6 col-md-4 col-lg-3">
+        <figure>
+          <img src="img/img2.png"
+              class="img-thumbnail">
+          <figcaption>
+            belgo
+          </figcaption>
+        </figure>
+      </a>
+      <a href="https://www.colegioweb.com.br/fisica/propriedades-do-ar.html" class="col-sm-6 col-md-4 col-lg-3">
+        <figure>
+          <img src="img/img3.png"
+              class="img-thumbnail">
+          <figcaption>
+            colegioweb
+          </figcaption>
+        </figure>
+      </a>
+      <a href="https://pt.wikipedia.org/wiki/Spray" class="col-sm-6 col-md-4 col-lg-3">
+        <figure>
+          <img src="img/img4.png"
+              class="img-thumbnail">
+          <figcaption>
+            wikipedia
+          </figcaption>
+        </figure>
+      </a>
+    </div>
+    </section><!FIM GALERIA-->
+    <section class="container">
+      <h2 class="text-center">Vídeos</h2>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <iframe width="800" height="400" class="d-block w-100" src="https://www.youtube.com/embed/2ukVcUn72WQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="carousel-caption d-none d-md-block">
+        <h5><a href="https://youtu.be/2ukVcUn72WQ">Youtube</a></h5>
+        <p></p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <iframe width="400" height="400" class="d-block w-100" src="https://www.youtube.com/embed/ahSaUODW9yA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <div class="carousel-caption d-none d-md-block">
+        <h5><a href="https://www.youtube.com/embed/ahSaUODW9yA">Youtube</a></h5>
+        <p></p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <iframe width="800" height="400" class="d-block w-100" src="https://www.youtube.com/embed/JRSKiKCytkE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <div class="carousel-caption d-none d-md-block">
+        <h5><a href="https://www.youtube.com/embed/JRSKiKCytkE">Youtube</a></h5>
+        <p></p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Próximo</span>
+  </a>
+</div>
+    <br><br>
+    </section><!FIM-->
+
+      <section class="hall bg-dark text-light pt-5" id="sobre">
+        <div class="container">
+
+          <div class="row d-flex align-items-center ">
+            <div class="col-lg-6">
+              <h1>
+                Variáveis de estado
+              </h1>
+                <section>
+	                <p> Conheça as três variáveis de estado dos gases: </p>
+	                <ul> 
+	               		<li> Volume: os gases ocupam todo o espaço onde estão contidos </li>
+	               		<li> Pressão: força que as partículas exercem sobre as paredes do recipiente por unidade de área. </li>
+	               		<li> Temperatura: medida do grau de agitação das moléculas. </li>
+	               	</ul>
+	               	<p> Elas se relacionam em duas fórmulas principais: </p>
+	               		<ul>
+	               			<li> Clapeyron: P * V = n * R * T </li>
+	               			<li> Lei geral dos gases perfeitos: P1 * V1 / T1 = P2 * V2 / T2 </li>
+	               		</ul>
+                </section>
+            </div>
+
+            <figure class="col-lg-6 mt-4">
+              <img  class="img-fluid img-thumbnail" src="img/imagem.jpg"> 
+              <figcaption>
+                Calibrando os pneus do carro
+              </figcaption>
+            </figure>
+
+          </div> <!--fim .row hall-->
+        </div> <!--fim .container hall-->
+
+      </section>
+
+      <h2 class="text-center mb-3 pt-5">
+           Transformações gasosas
+      </h2>
+      <section class="cont" id="caracteristicas">
+      <div class="row align-items-center">
+        <img src="img/imagem.jpg" class="spadding col-sm-12 col-md-12 col-lg-6">
+        <div class="text col-sm-12 col-md-12 col-lg-6">
+          <h4> Características </h4>
+          <h2> Isovolumétrica, Isométrica ou Isocórica </h2>
+          <p> Neste caso o volume é mantido constante, variando-se a pressão e a temperatura. O aumento da temperatura leva ao aumento da pressão (grandezas diretamente proporcionais). Os pneus de um carro são um bom exemplo. Em dias quentes, a pressão em seu interior é maior do que em dias frios, porque, havendo aumento na temperatura, a pressão aumenta, já que o volume mantém-se.</p>
+        </div>
+      </div>
+
+      <div class="row align-items-center">
+        <div class="text col-sm-12 col-md-12 col-lg-6">
+          <h4> Características </h4>
+          <h2> Isobárica </h2>
+          <p> Na transformação isobárica, a pressão é mantida constante enquanto o volume e a temperatura variam. Nota-se neste caso que o aumento da temperatura causa um aumento do volume, ou seja, essas duas grandezas são diretamente proporcionais. Um exemplo comum de processo isobárico é ferver água em um recipiente aberto. O vapor obtido tem uma temperatura mais elevada e ocupa um volume maior, porém a pressão permanece constante.</p> 
+        </div>
+          <img src="img/imagem1.jpg" class="spadding col-sm-12 col-md-12 col-lg-6">
+      </div>
+
+      <div class="row align-items-center ">
+        <img src="img/imagem3.jpg" class="spadding col-sm-12 col-md-12 col-lg-6">
+        <div class="text col-sm-12 col-md-12 col-lg-6">
+          <h4> Características </h4>
+          <h2> Isotérmica </h2>
+          <p>  Mantendo-se a temperatura constante e variando o volume em relação a pressão, nota-se que pressão e volume são grandezas inversamente proporcionais. É só pensarmos, por exemplo, no êmbolo de uma seringa. Matematicamente, temos:</p> 
+        </div>
+       </div>
+    </section>
+    
+    <section class="cards container pt-4 pb-4" id="cards"><!--cards-->        
+		<h1 class="mb-3">Exemplo</h1>
+	  	<div class="cardsrow"><!-- GRID -->
+	    	<div class="col-md-12 features_item">
+		    	<h3>Questão:</h3>
+		    	<p>Para ilustrar os conhecimentos adquiridos e o sistema gasoso dos pneus, segue um exemplo:</p>
+		        <p> (ITA-SP) A pressão total do ar no interior de um pneu era de 2,30 atm, quando a temperatura do pneu era de 27ºC. Depois de ter rodado um certo tempo com este pneu, mediu-se novamente sua pressão e verificou-se que esta agora era de 2,53 atm. Supondo a variação de volume do pneu desprezível, a nova temperatura será: </p>
+		        <form>
+				    <input type="radio" disabled> a) 29,7ºC <br/>
+				    <input type="radio" checked disabled> b) 57,0 ºC <br/>
+				    <input type="radio" disabled> c) 133,0 ºC <br/>
+				   	<input type="radio" disabled> d) 330 ºC <br/>
+				   	<input type="radio" disabled> e) n.d.a. <br/><br/>
+				</form>
+				<p>Podemos usar nesse exemplo a equação geral dos gases, desconsiderando o volume, por ele ser constante:</p>
+				<p>Então, temos: 2,30 / 300 = 2,53 / T</p>
+				<p>2,30 T = 759 </p>
+				<p>T = 330K = 57°C </p>
+	      	</div>
+	  	</div>
+  	</section>
+
+  	<section class="cards container pt-4 pb-4" id="cards">
+	    <h1 class="mb-3">Exercícios:</h1>
+	  	<div class="cardsrow"><!-- GRID -->
+	    	<div id = "ativ01" class="col-md-12 features_item">
+	      		<h3>Questão 01:</h3>
+		        <p> (PUC-RIO 2009) 0,5 mols de um gás ocupam um volume V de 0,1 m3 quando a uma temperatura de 300 K. Qual é a pressão do gás a 300 K? Considere R = 8,3 J/ mol K.</p>
+		        <form>
+				    <input type="radio" id="exercicio1_a" name="exercicio1"> a) 830 Pa <br/>
+				    <input type="radio" id="exercicio1_b" name="exercicio1"> b) 1245 Pa <br/>
+				    <input type="radio" id="exercicio1_c" name="exercicio1"> c) 1830 Pa <br/>
+				   	<input type="radio" id="exercicio1_d" name="exercicio1"> d) 12450 Pa <br/>
+				   	<input type="radio" id="exercicio1_e" name="exercicio1"> e) 18300 Pa <br/><br/>
+				   	<button class="btn btn-primary" type="button" id="executa1"> Verificar </button>
+				</form>
+				<p id="resultado1"></p>
+	      	</div>
+	     	<div id = "ativ02" class="col-md-12 features_item">
+		        <h3>Questão 02:</h3>
+		        <p>  (MACKENZIE) Se a pressão de um gás confinado é duplicada à temperatura constante, a grandeza do gás que duplicara será: </p>
+		        <form>
+				    <input type="radio" id="exercicio2_a" name="exercicio2"> a) a massa <br/>
+				    <input type="radio" id="exercicio2_b" name="exercicio2"> b) a massa específica <br/>
+				    <input type="radio" id="exercicio2_c" name="exercicio2"> c) o volume <br/>
+				   	<input type="radio" id="exercicio2_d" name="exercicio2"> d) o peso <br/>
+				   	<input type="radio" id="exercicio2_e" name="exercicio2"> e) a energia cinética <br/><br/>
+				   	<button class="btn btn-primary" type="button" id="executa2"> Verificar </button>
+				</form>
+				<p id="resultado2"></p>
+	      	</div>
+	     	<div id = "ativ03" class="col-md-12 features_item">
+		      	<h3>Questão 03:</h3>
+		        <p> (FUVEST) Um balão de vidro indilatável contém 10g de oxigênio a 77°C. Este balão poderá suportar,  no máximo, uma pressão interna três vezes superior à que está submetido. Se a temperatura do gás for reduzida a 27°C, a máxima quantidade de oxigênio que ainda pode ser introduzida no balão, nesta temperatura, é de: </p>
+		        <form>
+				    <input type="radio" id="exercicio3_a" name="exercicio3" value=""> a) 25g <br/>
+				    <input type="radio" id="exercicio3_b" name="exercicio3" value=""> b) 30g <br/>
+				    <input type="radio" id="exercicio3_c" name="exercicio3" value=""> c) 40g <br/>
+				   	<input type="radio" id="exercicio3_d" name="exercicio3" value=""> d) 60g <br/>
+				   	<input type="radio" id="exercicio3_e" name="exercicio3" value=""> e) 90g <br/><br/>
+				   	<button class="btn btn-primary" type="button" id="executa3"> Verificar </button>
+				</form>
+				<p id="resultado3"></p>
+	      	</div> 
+	  	</div><!-- ROW -->
+  	</section>  
+
+    </main>
+
+    <footer class="bg-secondary pt-4 pb-4">
+      <div class="container d-flex justify-content-between align-items-center">
+        <span>
+          <p>© 2020 Todos os direitos reservados</p>
+          <p> By Carlos Eduardo de Schuller Banjar</p>
+        </span>
+
+        <ul class="social">
+          <li><a href="https://www.facebook.com/carloseduardode.schullerbanjar" class="text-hide">Facebook</a></li>
+          <li><a href="https://twitter.com/kadu_banjar" class="text-hide">Twitter</a></li>
+          <li><a href="https://www.instagram.com/kadu_banjar/?hl=pt-br" class="text-hide">Instagram</a></li>
+        </ul>
+      </div>
+    </footer>
+
+  </body>
+</html>
