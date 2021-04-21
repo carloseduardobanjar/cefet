@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/meucss.css">
+    <title>Soluções</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+
+		function executa1(){
+			var num1 = document.getElementById('soluto').value;
+			var num2 = document.getElementById('solvente').value;
+			if(num1/num2 == 0.0016)
+				document.getElementById("resultado1").innerHTML = "Lembre-se: solução saturada é aquela que apresenta uma quantidade de soluto dissolvida exatamente igual à especificada no coeficiente de solubilidade. <br/> Logo, como o coeficiente de solubilidade da cal é de 0,16 gramas a cada 100mL de água (0,0016 gramas/mL) e a concentração da solução é " + num1 + "/" + num2 + "=" + num1/num2 + " gramas/mL, a solução é saturada.";  
+			if(num1/num2 > 0.0016)
+				document.getElementById("resultado1").innerHTML = "Lembre-se: solução saturada com corpo de fundo é aquela que apresenta uma quantidade de soluto dissolvida superior à especificada no coeficiente de solubilidade. <br/> Logo, como o coeficiente de solubilidade da cal é de 0,16 gramas a cada 100mL de água (0,0016 gramas/mL) e a concentração da solução é " + num1 + "/" + num2 + "=" + num1/num2 + " gramas/mL, a solução é saturada com corpo de fundo."; 
+			if(num1/num2 < 0.0016)
+				document.getElementById("resultado1").innerHTML = "Lembre-se: solução insaturada é aquela que apresenta uma quantidade de soluto dissolvida menor que a especificada no coeficiente de solubilidade. <br/> Logo, como o coeficiente de solubilidade da cal é de 0,16 gramas a cada 100mL de água (0,0016 gramas/mL) e a concentração da solução é " + num1 + "/" + num2 + "=" + num1/num2 + " gramas/mL, a solução é insaturada."; 
+		}
+
+		function executa2(){
+			var n1 = document.getElementById('soluto2').value;
+			var n2 = document.getElementById('solvente2').value;
+			if((n1 * 56)/(n2 * 1000) > 0.0016)
+			{
+				document.getElementById("resultado2").innerHTML = "A concentração molar obtida é " + n1/n2 + " mol/L. <br> Como há 56g de CaO por mol, a concentração em gramas/mL é " + (n1 * 56)/(n2 * 1000) + ", que é maior que o coeficiente de solubilidade, havendo corpo de fundo."; 
+			}
+			else 
+				document.getElementById("resultado2").innerHTML = "A concentração molar obtida é " + n1/n2 + " mol/L, sem corpo de fundo."; 
+		}
+    	
+    </script>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <div class="container">
+        <a href="#" class="navbar-brand"><img src="img/icone4.png"></a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarConteudo">
+          Menu
+        </button>
+        <div class="collapse navbar-collapse" id="navbarConteudo">
+          <ul class="navbar-nav mr-auto">
+            <li class="dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Descubra
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#" class="dropdown-item">#</a></li>
+                <li><a href="#" class="dropdown-item">#</a></li>
+                <li><a href="#" class="dropdown-item">#</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Descubra mais
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#">#</a></li>
+                <li><a href="#">#</a></li>
+                <li><a href="#">#</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div> <!-- fim .collapse -->
+      </div> <!-- fim .container -->
+    </nav>
+	<main>
+		<section class="jumbotron">
+		<div class="container">
+			<h1>Soluções</h1>
+			<p>Química</p>
+			<form class="input-group">
+				<input type="text" class="form-control"
+					placeholder="Encontre o que você quer">
+					
+				<button class="btn btn-primary"> Pesquisar </button>
+			</form>
+		</div>
+		</section><!--Fim Jumbotron-->
+    <section class="container">
+      <h2 class="text-center">Imagens</h2>
+      <p class="text-center"> Você sabe o que uma solução? Soluções são misturas homogêneas e podem ser encontradas nos estados de agregação gasoso, líquido e sólido. Convivemos com vários tipos delas, algumas de grande importância para a manutenção da vida, como o ar atmosférico e a água potável, mineral, dos rios, lagos e oceanos.</p>
+    <div class="row">
+      <a href="https://ndmais.com.br/saude/duvidas-na-hora-de-escolher-o-vinagre-no-supermercado-ou-no-restaurante/" class="col-sm-6 col-md-4 col-lg-3">
+        <figure>
+          <img src="img/vinagre.jpeg"
+              class="img-thumbnail">
+          <figcaption>
+            nd+
+          </figcaption>
+        </figure>
+      </a>
+      <a href="https://www.brasilagro.com.br/conteudo/preco-da-gasolina-cai-durante-a-pandemia-e-fica-13-mais-baixo-em-2020-.html" class="col-sm-6 col-md-4 col-lg-3">
+        <figure>
+          <img src="img/gasolina.jpg"
+              class="img-thumbnail">
+          <figcaption>
+            brasilagro
+          </figcaption>
+        </figure>
+      </a>
+      <a href="https://mundoeducacao.uol.com.br/quimica/solucoes.htm" class="col-sm-6 col-md-4 col-lg-3">
+        <figure>
+          <img src="img/alianca.jfif"
+              class="img-thumbnail">
+          <figcaption>
+            MundoEducação
+          </figcaption>
+        </figure>
+      </a>
+      <a href="https://www.adventistas.org/pt/saude/8-remedios-naturais/respiracao-de-ar-puro/" class="col-sm-6 col-md-4 col-lg-3">
+        <figure>
+          <img src="img/ar.jpg"
+              class="img-thumbnail">
+          <figcaption>
+            Adventistas
+          </figcaption>
+        </figure>
+      </a>
+    </div>
+    </section><!FIM GALERIA-->
+    <section class="container">
+      <h2 class="text-center">Vídeos</h2>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <iframe width="800" height="400" class="d-block w-100" src="https://www.youtube.com/embed/KtiEiMBpso8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="carousel-caption d-none d-md-block">
+        <h5><a href="https://www.youtube.com/watch?v=KtiEiMBpso8">Youtube</a></h5>
+        <p></p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <iframe width="800" height="400" class="d-block w-100" src="https://www.youtube.com/embed/0FiaUwO5MDg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <div class="carousel-caption d-none d-md-block">
+        <h5><a href="https://www.youtube.com/watch?v=0FiaUwO5MDg">Youtube</a></h5>
+        <p></p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <iframe width="800" height="400" class="d-block w-100" src="https://www.youtube.com/embed/NGs7TebsgQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <div class="carousel-caption d-none d-md-block">
+        <h5><a href="https://www.youtube.com/watch?v=NGs7TebsgQw">Youtube</a></h5>
+        <p></p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Próximo</span>
+  </a>
+</div>
+    <br><br>
+    </section><!FIM-->
+
+      <section class="hall bg-dark text-light pt-5" id="sobre">
+        <div class="container">
+
+          <div class="row d-flex align-items-center ">
+            <div class="col-lg-6">
+              <h1>
+                Coeficiente de solubilidade
+              </h1>
+                <section>
+	                <p> O coeficiente de solubilidade é uma grandeza que determina a quantidade máxima de um soluto que podemos dissolver em uma dada quantidade de solvente em certa temperatura. Veja, ao lado, a curva de solubilidade de algumas substâncias. </p>
+	                <p> Com base no coeficiente, é possível classificar as soluções: </p>
+	                <ul>
+	                	<li> Saturada com corpo de fundo: a quantidade de soluto é maior. </li>
+	                	<li> Saturada: a quantidade de soluto é igual. </li> 
+	                	<li> Insaturada: a quantidade de soluto é menor. </li>
+
+	                </ul>
+                </section>
+            </div>
+
+            <figure class="col-lg-6 mt-4">
+              <img  class="img-fluid img-thumbnail" src="img/curvasolubilidade.png"> 
+              <figcaption>
+                Curva de solubilidade
+              </figcaption>
+            </figure>
+
+          </div> <!--fim .row hall-->
+        </div> <!--fim .container hall-->
+
+      </section>
+
+    
+    <section class="cards container pt-4 pb-4" id="cards"><!--cards-->        
+		<h1 class="mb-3">Simulação</h1>
+	  	<div class="cardsrow"><!-- GRID -->
+	    	<div class="col-md-12 features_item">
+		    	<h3> Faça você mesmo:</h3>
+		    	<p> Para saber a classificação da solução de CaO(s) + H2O quanto à quantidade de soluto à temperatura de 25°C, preencha: </p>
+		    	<p><input type="number" id="soluto" placeholder="CaO (em gramas):" /></p>
+		    	<p><input type="number" id="solvente" placeholder="H2O (em mL):" /></p>
+		    	<button class="btn btn-primary" onclick='executa1()'> Verificar </button>
+		    	<p id="resultado1"> </p>
+	      	</div>
+	  	</div>
+  	</section>
+
+  	<h2 class="text-center mb-3 pt-5">
+        Relações entre soluto e solução
+    </h2>
+    <section class="cont" id="caracteristicas">
+      <div class="row align-items-center">
+        <img src="img/fumaca.jpg" class="spadding col-sm-12 col-md-12 col-lg-6">
+        <div class="text col-sm-12 col-md-12 col-lg-6">
+          <h4> Relações entre soluto e solução </h4>
+          <h2> Concentração</h2>
+          <p> A concentração em massa indica a quantidade em massa de soluto, que se encontra dissolvida em um volume-padrão de solução. </p>
+          <p> Já a concentração em partes por milhão indica quantas partes do soluto existem em um milhão de partes da solução (em volume ou em massa). É usado em casos em que a quantidade de soluto é extremamente pequena, como a concentração dos poluentes existentes no ar.</p>
+          <p> Outra forma de se calcular a concentração é por meio da relação entre a quantidade de matéria do soluto e o volume da solução. </p>
+        </div>
+      </div>
+
+      <div class="row align-items-center">
+        <div class="text col-sm-12 col-md-12 col-lg-6">
+          <h4> Relações entre soluto e solução </h4>
+          <h2> Densidade </h2>
+          <p> A densidade de uma solução é a relação entre a massa e o volume dela. </p> 
+          <p> Uma consequência importante da densidade dos materiais é que o material mais denso afunda e o menos denso flutua.</p>
+        </div>
+          <img src="img/densidade.jpg" class="spadding col-sm-12 col-md-12 col-lg-6">
+      </div>
+
+      <div class="row align-items-center ">
+        <img src="img/soro.jpg" class="spadding col-sm-12 col-md-12 col-lg-6">
+        <div class="text col-sm-12 col-md-12 col-lg-6">
+          <h4> Relações entre soluto e solução </h4>
+          <h2> Título </h2>
+          <p> O título em massa indica o número de unidades de massa de soluto existente em 100 unidades de masssa da solução. O soro fisiológico, por exemplo, é uma solução de NaCl, que apresenta uma porcentagem em massa de 0,9%. Isso significa que existem 0,9 grama de NaCl para cada 100 gramas de solução. Assim, podemos concluir que seu título é 0,009.</p> 
+          <p> Já o título em volume indica o número de unidades de volume de soluto existente em 100 unidades de volume da solução. </p>
+        </div>
+       </div>
+    </section>
+
+    <section class="cards container pt-4 pb-4" id="cards"><!--cards-->        
+		<h1 class="mb-3">Simulação</h1>
+	  	<div class="cardsrow"><!-- GRID -->
+	    	<div class="col-md-12 features_item">
+		    	<h3>Faça você mesmo:</h3>
+		    	<p> Para saber a concentração molar de uma solução CaO(s) + H2O, preencha: </p>
+		    	<p><input type="number" id="soluto2" placeholder="CaO (em mol):" /></p>
+		    	<p><input type="number" id="solvente2" placeholder="H2O (em L):" /></p>
+		    	<button class="btn btn-primary" onclick='executa2()'> Verificar </button>
+		    	<p id="resultado2"> </p>
+	      	</div>
+	  	</div>
+  	</section>
+  	<h2 class="text-center mb-3 pt-5">
+        Propriedades coligativas
+    </h2>
+    <section class="cont" id="caracteristicas">
+      <div class="row align-items-center">
+        <img src="img/aguaacucar.jpg" class="spadding col-sm-12 col-md-12 col-lg-6">
+        <div class="text col-sm-12 col-md-12 col-lg-6">
+          <h4> Características </h4>
+          <h2> Tonoscopia </h2>
+          <p> O efeito tonoscópico é a diminuição da pressão de vapor de um líquido quando um soluto não volátil é adicionado a ele. Quando preparamos uma mistura de água e açúcar, por exemplo, as moléculas de açúcar dissolvem-se, o que dificulta que as moléculas de água da superfície do líquido passem para o estado de vapor e escapem do solvente.</p>
+        </div>
+      </div>
+
+      <div class="row align-items-center">
+        <div class="text col-sm-12 col-md-12 col-lg-6">
+          <h4> Características </h4>
+          <h2> Ebulioscopia </h2>
+          <p> O efeito ebulioscópico é o aumento do ponto de ebulição de um líquido quando adicionamos um soluto não volátil a ele. Por exemplo, quando temos água fervendo e adicionamos açúcar, a água para de ferver na hora, ou seja, a temperatura de ebulição aumentou. Isso acontece pelo mesmo motivo mencionado para o efeito tonoscópico, isto é, a interação entre as moléculas do solvente e do soluto dificulta que a molécula passe para o estado de vapor. </p> 
+        </div>
+          <img src="img/ebulioscopia.jpg" class="spadding col-sm-12 col-md-12 col-lg-6">
+      </div>
+
+      <div class="row align-items-center ">
+        <img src="img/crioscopia.jpg" class="spadding col-sm-12 col-md-12 col-lg-6">
+        <div class="text col-sm-12 col-md-12 col-lg-6">
+          <h4> Características </h4>
+          <h2> Crioscopia </h2>
+          <p>  O efeito crioscópico é a diminuição do ponto de congelamento de um líquido quando um soluto não volátil é adicionado a ele. Por exemplo, em países que nevam, há o risco de congelamento da água dos radiadores usados para refrigerar os motores. Por isso, há alguns produtos comerciais (aditivos) que são adicionados com a finalidade de diminuir o ponto de congelamento da água e evitar o seu congelamento. </p> 
+        </div>
+       </div>
+
+       <div class="row align-items-center">
+        <div class="text col-sm-12 col-md-12 col-lg-6">
+          <h4> Características </h4>
+          <h2> Osmoscopia </h2>
+          <p> O fenômeno da osmose ocorre quando colocamos um solvente puro e uma solução (ou duas soluções com concentrações diferentes) separados por uma membrana semipermeável e ocorre a passagem de solvente pela membrana no sentido do solvente para a solução (ou da solução menos concentrada para a mais concentrada). Podemos observar esse fenômeno quando temperamos uma salada de folhas cruas e não a consumimos imediatamente: as folhas "murcham", porque a água se difunde das células vegetais para a solução de vinagre e sal. </p> 
+        </div>
+          <img src="img/osmose.jpg" class="spadding col-sm-12 col-md-12 col-lg-6">
+      </div>
+    </section>
+
+    </main>
+
+    <footer class="bg-secondary pt-4 pb-4">
+      <div class="container d-flex justify-content-between align-items-center">
+        <span>
+          <p>© 2020 Todos os direitos reservados</p>
+          <p> By Carlos Eduardo de Schuller Banjar</p>
+        </span>
+
+        <ul class="social">
+          <li><a href="https://www.facebook.com/carloseduardode.schullerbanjar" class="text-hide">Facebook</a></li>
+          <li><a href="https://twitter.com/kadu_banjar" class="text-hide">Twitter</a></li>
+          <li><a href="https://www.instagram.com/kadu_banjar/?hl=pt-br" class="text-hide">Instagram</a></li>
+        </ul>
+      </div>
+    </footer>
+
+  </body>
+</html>
