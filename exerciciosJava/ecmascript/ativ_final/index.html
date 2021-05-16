@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+ 	<head>
+    	<meta charset="utf-8">
+    	<title>JavaScript</title>
+  	</head>
+ 	<body>
+ 		<p>Para acessar os comandos, clique <a href='ativ_final.pdf'>aqui</a>.</p>
+        <p>01.</p>
+        <input type="text" id="texto1_1" placeholder="Digite um valor numérico"><br><br>
+        <input type="text" id="texto1_2" placeholder="Digite um valor numérico"><br><br>
+        <input type="text" id="texto1_3" placeholder="Digite um operador (+,-,*,/)"><br><br>
+        <button type="button" id="executa1">Executar</button>
+        <p id="resultado1"></p>  
+        <p>02.</p>
+        <input type="text" id="texto2" placeholder="Digite o salário"><br><br>
+        <button type="button" id="executa2">Executar</button>
+        <p id="resultado2"></p>  
+        <p>03.</p>
+        <input type="text" id="texto3_1" placeholder="Digite um lado do triângulo"><br><br>
+        <input type="text" id="texto3_2" placeholder="Digite um lado do triângulo"><br><br>
+        <input type="text" id="texto3_3" placeholder="Digite um lado do triângulo"><br><br>
+        <button type="button" id="executa3">Executar</button>
+        <p id="resultado3"></p> 
+        <p>04.</p>
+        <input type="text" id="texto4_1" placeholder="Digite a sequência"><br><br>
+        <input type="text" id="texto4_2" placeholder="Digite o valor de rotação"><br><br>
+        <button type="button" id="executa4">Executar</button>
+        <p id="resultado4"></p>               
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>     
+    <script>
+
+        $(function(){
+
+            $("#executa1").click(function(){
+
+                var texto1_1 = $("#texto1_1").val();
+                var texto1_2 = $("#texto1_2").val();
+                var texto1_3 = $("#texto1_3").val();
+
+                var texto1_1 = parseFloat(texto1_1);
+                var texto1_2 = parseFloat(texto1_2);
+
+                switch(texto1_3) {
+                	case '+': 
+                		var resultado1 = texto1_1 + texto1_2; 
+                		break;
+                	case '-':
+                		var resultado1 = texto1_1 - texto1_2;  
+                		break;
+                	case '*':
+                		var resultado1 = texto1_1 * texto1_2;  
+                		break;
+                	case '/':
+                		var resultado1 = texto1_1 / texto1_2;  
+                		break;
+                }
+                                
+                $("#resultado1").html(texto1_1 + texto1_3 + texto1_2 + "=" + resultado1);
+            })
+
+            $('#executa2').click(function(){
+
+            	var texto2 = $("#texto2").val();
+
+            	if(texto2 <= 1903.98){
+            		var aliquota = 0;
+            		var deducao = 0;
+            	}
+            	else 
+            		if(texto2 <= 2826.65){
+            			aliquota = 7.5;
+            			deducao = 142.80;
+            		}
+            		else 
+            			if(texto2 <= 3751.05){
+            				aliquota = 15;
+            				deducao = 354.80;
+            			}
+            			else 
+            				if(texto2 <= 4664.68){
+            					aliquota = 22.5;
+            					deducao = 636.13;
+            				}
+            				else{
+            					aliquota = 27.5;
+            					deducao = 869.36;
+            				}
+
+            	var resultado2 = ((texto2 * aliquota)/100) - deducao;
+            	$("#resultado2").html("Taxa: " + resultado2);
+            })
+
+            $('#executa3').click(function(){
+
+            	var a = $("#texto3_1").val();
+            	var b = $("#texto3_2").val();
+            	var c = $("#texto3_3").val();
+            	var maior = Math.max(a, b, c);
+
+            	var a = parseFloat(a);
+                var b = parseFloat(b);
+                var c = parseFloat(c);
+
+            	if(a <= 0 || b <= 0 || c <= 0)
+            		$("#resultado3").html("Erro");
+            	else 
+            		if((a + b) <= maior || (a + c) <= maior || (b + c) <= maior)
+            			$("#resultado3").html("Erro");
+	            	else 
+		            	if(a == b && b == c)
+		            		$("#resultado3").html("Equilátero");
+		            	else 
+		            		if(a == b || a == c || b == c)
+		            			$("#resultado3").html("Isósceles");
+		            		else 
+		            			$("#resultado3").html("Escaleno");
+            })
+
+            $('#executa4').click(function(){
+
+            	var texto4_1 = $("#texto4_1").val();
+            	var texto4_2 = $("#texto4_2").val();
+		        texto4_2 = parseFloat(texto4_2);
+		        let array_letras = texto4_1.split(''); 
+		        let array_alfabeto = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+		        let tam_letras = array_letras.length;
+		        let tam_alfabeto = array_alfabeto.length;
+		        let i = 0;
+		       	let x = 0;
+		       	let a;
+		       	let aux;
+		        while(x<tam_letras)
+		       	{
+		       		aux = array_letras[x];
+		       		while(i<tam_alfabeto)
+		       		{
+		       			if(array_alfabeto[i] == aux)
+		       			{
+		       				if((i+texto4_2)>tam_alfabeto)
+		       				{
+		       					a = i + texto4_2 - tam_alfabeto;
+		       					array_letras[x] = array_alfabeto[a];
+		       				}
+		       				else if((i+texto4_2) == tam_alfabeto)
+		       				{
+		       					array_letras[x] = array_alfabeto[0];
+		       				}
+		       				else{
+		       					array_letras[x] = array_alfabeto[i + texto4_2];
+		       				}
+		       			}
+		       			i++;
+		       		}
+		       		i = 0;
+		       		x++;
+		       	}	
+		       	let resultado = array_letras.join('');
+		       	$("#resultado4").text(resultado);
+		    })		            	
+		})
+    </script>
+  	</body>
+</html>
