@@ -1,0 +1,130 @@
+.jumbotron{
+	background-image: url(../img/fundo.jpg);
+	background-size: cover;
+	background-position:center;
+	color: #ffffff;
+}
+.spadding{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.cont h4{
+	   font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: #a3c2d1;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-bottom: .5rem;
+    font-family: inherit;
+    margin-top: 0;
+    display: block;
+}
+
+.cont h2{
+	font-size: 30px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: #404044;
+    font-weight: 400;
+    font-family: inherit;
+    margin-top: 0;
+    display: block;
+}
+.cont p{
+	display: block;
+    font-family: work sans,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 300;
+    color: #8b8b92;
+}
+.text{
+	padding-right: 7%;
+  padding-left: 7%;
+}
+.cont {
+	background: #eeeeee;
+}
+
+.features_item{
+    color: #fff;
+    background: #00c8e6;
+    padding: 50px 20px 55px 20px;
+    line-height: 24px;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+.features_item h3 {
+    margin-bottom: 20px;
+    line-height: 1.5em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+}
+.features_item p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.cardsrow {
+    display: flex;
+    flex-wrap: wrap;
+}
+.features_item:nth-child(even) {
+    background: #04091e;
+}
+.features_item + .features_item {
+    border-left: 1px solid #fff;
+}
+
+.footer {
+  margin-top: 2em;
+  background: #e6e6e6;
+  padding: 40px 0;
+  border-top: 1px solid #AAA;
+}
+
+.footer .container {
+  position: relative;
+}
+
+/*
+.social {
+  position: absolute;
+  right: 1em;
+  top: -1.6em;
+}
+*/
+
+.social a {
+  display: block;
+  width: 36px;
+  height: 36px;
+  text-indent: -9999px;
+  
+}
+
+.social li {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+
+.social a[href='https://www.facebook.com/carloseduardode.schullerbanjar'] {
+  background: url(../img/icone-face.png);
+  background-size: 36px 36px
+}
+
+.social a[href='https://twitter.com/kadu_banjar'] {
+  background: url(../img/icone-twitter.png);
+  background-size: 36px 36px
+}
+
+.social a[href='https://www.instagram.com/kadu_banjar/?hl=pt-br'] {
+  background: url(../img/icone-insta.png);
+  background-size: 36px 36px
+}
