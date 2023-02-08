@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+ 	<head>
+    	<meta charset="utf-8">
+    	<title>JavaScript</title>
+  	</head>
+ 	<body>
+        <p>01. Crie um script que implemente as funções min, max, uniq, sortNum. Tais funções devem: retornar o valor mínimo (min) e máximo (max) de um array de números, retornar o array sem repetições (uniq) e ordenar o array numérico (sortNum).</p>
+        <input type="text" id="texto1" placeholder="Digite o array, entre vírgulas"><br><br>
+        <button type="button" id="executa1">Executar</button>
+        <p id="resultado1"></p>  
+        <p>02. Crie uma função para exibir a sequência de Fibonacci até a posição n, por exemplo, a série com os quatro primeiros elementos é 0, 1, 1, 2. O valor da entrada e saída são respectivamente um número e um vetor. Você deve disponibilizar uma página para entrada do número n e sua respectiva saída. </p>
+        <input type="text" id="texto2" placeholder="Digite um número"><br><br>
+        <button type="button" id="executa2">Executar</button>
+        <p id="resultado2"></p>  
+        <p>03. a) Implemente uma função double(), que retorne o array com cada um dos elementos duplicado. A função deve usar map. 
+        <p>b) Implemente uma função evenElements(), que retorne um array com apenas os elementos pares do array original. A função deve usar filter. </p>
+		<p> c. Implemente uma função sum(), que retorne a soma de todos os elementos do array. A função deve usar reduce.</p>
+        <input type="text" id="texto3" placeholder="Digite o array, entre vírgulas"><br><br>
+        <button type="button" id="executa3">Executar</button>
+        <p id="resultado3"></p>               
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>     
+    <script>
+
+        $(function(){
+
+            $("#executa1").click(function(){
+                let texto1 = $("#texto1").val();
+                texto1 = texto1.replace(/\s+/g, ''); //remove os espaços do array
+                let array = texto1.split(",");
+                let length = array.length;
+                if(array[length-1] == "")
+                {
+                    array.pop();
+                }
+                $("#resultado1").html("<br>Valor mínimo: " + minimo(array) + "<br> Valor máximo: " + maximo(array) + "<br> Array sem repetição: " + sem_repetir(array) + "<br> Array em ordem: " + ordem_crescente(array));
+            })
+            
+            function minimo (vetor)
+            {
+                let min;
+                vetor.forEach( function(num)
+                {
+                    if(num == Math.min(...vetor))
+                    {
+                        min = num;
+                    }            
+                });
+                return min;
+            }
+
+            function maximo (vetor)
+            {
+                let max;
+                vetor.forEach( function(num)
+                {
+                    if(num == Math.max(...vetor))
+                    {
+                        max = num;
+                    }            
+                });
+                return max;
+            }
+
+            function sem_repetir (vetor)
+            {
+                let vetor_sem_repeticao = [...new Set(vetor)];
+                return vetor_sem_repeticao.join(", ");
+            }
+
+            function ordem_crescente (vetor)
+            {
+                return vetor.sort().join(", ");
+            }
+
+            $("#executa2").click(function(){
+		        let texto2 = $("#texto2").val();
+		        $("#resultado2").html("<br>Sequência de Fibonacci de " + texto2 + " números: " +  fibonacci(texto2));
+		    })
+		    
+		    function fibonacci (x) 
+		    {
+		        let array = new Array;
+		        array.push(0);
+		        let a = 0;
+		        let b = 1;
+		        let f = 1;
+		        for (let i=0; i<x-1; i++) 
+		        {
+		            array.push(f);
+		            f = a + b;
+		            a = b;
+		            b = f;
+		        }
+		        return array.join(", ");
+		    }
+
+		    $("#executa3").click(function(){
+		        let texto3 = $("#texto3").val();
+		        texto3 = texto3.replace(/\s+/g, '');
+		        let array = texto3.split(",");
+		        let tam = array.length;
+		        if(array[tam-1] == "")
+		        {
+		            array.pop();
+		        }
+		        $("#resultado3").html("<br>Valores duplicados: " + elemento_duplicado(array) + "<br> Valores pares: " + array_par(array) + "<br> Soma dos elementos do array: " + soma(array));
+		    })
+
+		    function elemento_duplicado (vetor)
+		    {
+		        let x = vetor.map(function(num)
+		        {
+		            return num*2;
+		        })
+		        return x;
+		    }
+
+		    function array_par (vetor)
+		    {
+		        let x = vetor.filter(function(num)
+		        {
+		            return num%2==0;
+		        })
+		        if(x == "")
+		        {
+		            return "0"
+		        }
+		        else
+		        {
+		            return x;
+		        }
+		    }
+
+		    function soma (vetor)
+		    {
+		        let x = vetor.reduce(function(soma, num)
+		        {
+		            return parseInt(soma) + parseInt(num);
+		        });
+		        return x;
+		    }
+        })
+    </script>
+  	</body>
+</html>

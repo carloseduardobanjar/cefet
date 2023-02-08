@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+	<title>Laboratório de jQuery 2</title>
+	<style type="text/css">
+		button{
+			height: 44px;
+			background-color: #4682B4;
+			border: 0px;
+			border-radius: 0px;
+			color: white;
+			width: 200px;
+		}
+  	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		
+		$(function(){ //document.ready
+			$("#executa1").click(function(){
+				let frase = $("#frase1").val();
+				var qtd = frase.length;
+				var normal = [];
+				for (var i = 0; i < qtd ; i++) 
+				{
+					normal[i] = frase.charAt(i);
+				}
+				var inversa = [];
+				var j = qtd - 1;
+				for (i=0; i < qtd; i++) 
+				{
+   					inversa[i] = normal[j];
+  					j--;
+				}
+				var resultado1 = inversa.join("");
+				$("#resultado1").text(resultado1);
+			})
+
+			$("#executa2").click(function(){
+				let frase = $("#frase2").val();
+				var array= [];
+				for(i=0; i<frase.length; i++){
+					let caracter = frase[i];
+					caracter = caracter.toUpperCase();
+					if(caracter == "A" || caracter == "E" || caracter == "I" || caracter == "O" || caracter == "U")
+						array[i] = "<strong>" + frase[i] + "</strong>";
+					else
+						array[i] = frase[i];
+				}
+				var resultado2 = array.join("");
+				$("#resultado2").html(resultado2);
+			})
+
+			$("#executa3").click(function(){
+				let frase = $("#frase3").val();
+				var res = frase.split(" ");
+				$('<table>', {
+				    id: 'acervo',
+				    class: 'bordered striped highlight responsive-table',
+				}).appendTo('#tabela');
+
+				for (var i=0; i<res.length; i++) //percorrer um array com cada palavra de res
+				{
+					var total = 0;
+					for(var j=0; j<res.length; j++)
+					{
+						if(res[i]==res[j])
+							var total = total + 1;
+					}
+					$("#acervo")
+					.append(
+						$("<tr>")
+							.append(
+								$("<td>")
+									.text(res[i])
+								)
+							.append(
+								$("<td>")
+									.text(total)
+							)
+					);
+				}
+			})
+
+			$("#executa4").click(function(){
+				let frase = $("#frase4").val();
+				var res = frase.split(" ");
+
+				var ocorrenciasMaior = -1;
+				for (var i=0; i<res.length; i++) //percorrer um array com cada palavra de res
+				{
+					var ocorrencia = 0;
+					for(var j=0; j<res.length; j++)
+					{
+						if(res[i]==res[j])
+							var ocorrencia = ocorrencia + 1;
+					}
+					if(ocorrencia>ocorrenciasMaior)
+					{
+						ocorrenciasMaior = ocorrencia;
+					}
+				}
+				var array=[];
+				for(var i=0; i<res.length; i++)
+				{
+					var ocorrencia = 0;
+					for(var j=0; j<res.length; j++)
+					{
+						if(res[i]==res[j])
+							var ocorrencia = ocorrencia + 1;
+					}
+					if(ocorrencia==ocorrenciasMaior)
+					{
+						var n = array.indexOf(res[i]);
+						if(n==-1)
+							array.push(res[i]);
+					}
+				}
+				var resultado4 = array.join();
+				$("#resultado4").text("Palavra(s): " + resultado4 + " (ocorrência: " + ocorrenciasMaior + ")");
+			})
+
+		
+
+			$("#executa5").click(function(){
+				let texto = $("#texto").val();
+				var res = texto.split(" ");
+				let procurar = $("#procurar").val();
+				let substituir = $("#substituir").val(); 
+				for(var i=0; i<res.length; i++)
+				{
+					if(res[i]==procurar)
+						res[i]=substituir;
+				}
+				texto = res.join(" ");
+				$("#resultado5").text(texto);
+			})
+
+			$("#executa6").click(function(){
+				let data1 = $("#entrada6").val(); 
+				let d = new Date(); //recupera o dia de hoje
+				let data2 = ('0' + d.getDate()).slice(-2) + '/' + ('0' + (d.getMonth()+1)).slice(-2) + '/' + d.getFullYear();
+		        let dia1 = data1.substr(0,2);
+		        let mes1 = data1.substr(3,2);
+		        let ano1 = data1.substr(6,4);
+		        let dia2 = data2.substr(0,2);
+		        let mes2 = data2.substr(3,2);
+		        let ano2 = data2.substr(6,4);
+		        data1 = new Date(ano1,mes1 - 1,dia1); //passando p formato americano
+		        data2 = new Date(ano2,mes2 - 1,dia2);
+		        let diferenca_tempo = Math.abs(data1.getTime() - data2.getTime()); //diferença, em milissegundos, das duas datas
+		        let qtd_dia = diferenca_tempo / (1000 * 60 * 60 * 24); //transformando a diferença p dias
+		        $("#resultado6").text(qtd_dia + " dia(s)");
+			})
+
+			$("#executa7").click(function(){
+		        let data = $("#entrada7").val();  
+		        let dia = data.substr(0,2);
+		        let mes = data.substr(3,2);
+		        let ano = data.substr(6,4);		
+		        switch(mes){
+		            case "01": mes = "janeiro"; break;
+		            case "02": mes = "fevereiro"; break;
+		            case "03": mes = "março"; break;
+		            case "04": mes = "abril"; break;
+		            case "05": mes = "maio"; break;
+		            case "06": mes = "junho"; break;
+		            case "07": mes = "julho"; break;
+		            case "08": mes = "agosto"; break;
+		            case "09": mes = "setembro"; break;
+		            case "10": mes = "outubro"; break; 
+		            case "11": mes = "novembro"; break;
+		            case "12": mes = "dezembro"; break;
+		        }        
+		        $("#resultado7").text(dia + " de " + mes + " de " + ano);
+		    })
+
+			$("#executa8").click(function(){
+		        let data1 = $("#entrada8_1").val(); 
+		        let data2 = $("#entrada8_2").val(); 
+		        let dia1 = data1.substr(0,2);
+		        let mes1 = data1.substr(3,2);
+		        let ano1 = data1.substr(6,4);
+		        let dia2 = data2.substr(0,2);
+		        let mes2 = data2.substr(3,2);
+		        let ano2 = data2.substr(6,4);
+		        data1 = new Date(ano1,mes1 - 1,dia1); //passando p formato americano
+		        data2 = new Date(ano2,mes2 - 1,dia2);
+		        let diferenca_tempo = Math.abs(data1.getTime() - data2.getTime()); //diferença, em milissegundos, das duas datas
+		        let qtd_semana = Math.trunc(diferenca_tempo / (1000 * 60 * 60 * 24 * 7)); //transformando a diferença p semanas
+		        $("#resultado8").text(qtd_semana + " semana(s)");
+		    })			
+
+			$("#entrada9").keyup(function(){
+
+				var numeros = /([0-9])/;
+				var alfabetoa = /([a-z])/;
+				var alfabetoA = /([A-Z])/;
+				var chEspeciais = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+
+			    if($("#entrada9").val() == '')
+			        $("#resultado9").text("");
+			    if(alfabetoa.test($("#entrada9").val()) || alfabetoA.test($("#entrada9").val()))
+			        $("#resultado9").html("<span style='color:red'>Fraca</span>");
+			    if(alfabetoa.test($("#entrada9").val()) && alfabetoA.test($("#entrada9").val()) && numeros.test($("#entrada9").val()))
+			        $("#resultado9").html("<span style='color:orange'>Moderada</span>");
+			    if(alfabetoa.test($("#entrada9").val()) && alfabetoA.test($("#entrada9").val()) && numeros.test($("#entrada9").val()) && chEspeciais.test($("#entrada9").val()))
+			        $("#resultado9").html("<span style='color:green'>Forte</span>");
+			})	        
+
+		}); //fim do document.ready
+
+	</script>
+</head>
+<body>
+	<div id="ativ01">
+		<p>01. Faça um programa que leia uma frase e escreva abaixo invertendo os caracteres - o primeiro se torna o último, o segundo o penúltimo e assim por diante.</p>
+		<input type="text" name="input" placeholder="Digite aqui" id ="frase1">
+		<button id="executa1">Executar</button>
+		<p id="resultado1"></p>
+	</div>
+
+	<div id="ativ02">
+		<p>02. Faça um programa que leia uma frase e escreva abaixo marcando as vogais em negrito.</p>
+		<input type="text" name="input" placeholder="Digite aqui" id ="frase2">
+		<button id="executa2">Executar</button>
+		<p id="resultado2"></p>
+	</div>
+
+	<div id="ativ03">
+		<p>03. Faça um programa que leia um texto e separe todas as palavras em um array, indicado para cada uma delas o número de vezes que aparece no texto. Imprima o array em uma tabela contendo a palavra e número de ocorrências.</p>
+		<input type="text" name="input" placeholder="Digite aqui" id ="frase3">
+		<button id="executa3">Executar</button>
+		<p id="tabela"></p>
+	</div>
+
+	<div id="ativ04">
+		<p>04. Faça um programa que leia um texto e indique a palavra de maior ocorrência e quantas vezes ela apareceu no texto.</p>
+		<input type="text" name="input" placeholder="Digite aqui" id ="frase4">
+		<button id="executa4">Executar</button>
+		<p id="resultado4"></p>
+	</div>
+
+	<div id="ativ05">
+		<p>05. Faça um programa que implemente a funcionalidade substituir em textos, ou seja, terá um campo "procurar" e um campo "substituir". Ao executar, seu programa deverá procurar as ocorrências no texto do valor digitado em "procurar" e trocar pelo valor digitado em "substituir".</p>
+		<input type="text" name="input" placeholder="Digite aqui o texto" id ="texto">
+		<input type="text" name="input" placeholder="Digite aqui a palavra a ser substituída" id ="procurar">
+		<input type="text" name="input" placeholder="Digite aqui a palavra a substituir" id ="substituir">
+		<button id="executa5">Executar</button>
+		<p id="resultado5"></p>
+	</div>
+
+	<div id="ativ06">
+		<p>06. Faça um programa que leia uma data de nascimento e retorne quantos dias de vida a pessoa tem.</p>
+		<input type="text" name="input" placeholder="Digite aqui" id ="entrada6">
+		<button id="executa6">Executar</button>
+		<p id="resultado6"></p>
+	</div>
+
+	<div id="ativ07">
+		<p>07. Faça um programa que leia uma data de nascimento em formato de dd/mm/aaaa e escreva por extenso a data. Por exemplo: 03/05/2017 vira "03 de maio de 2017".</p>
+		<input type="text" name="input" placeholder="Digite aqui" id ="entrada7">
+		<button id="executa7">Executar</button>
+		<p id="resultado7"></p>
+	</div>
+
+	<div id="ativ08">
+		<p>08. Faça um programa que leia duas datas e indique em semanas a distância entre elas. Por exemplo: 02/05/2017 e 02/07/2017 resultado = 8 semanas.</p>
+		<input type="text" name="input" placeholder="Digite aqui" id ="entrada8_1">
+		<input type="text" name="input" placeholder="Digite aqui" id ="entrada8_2">
+		<button id="executa8">Executar</button>
+		<p id="resultado8"></p>
+	</div>
+
+	<div id="ativ09">
+		<p>09. Faça uma caixa de texto que classifique:</p>
+		<p>- fraca (em vermelho) se só possuir letras minúsculas ou maiúsculas</p>
+		<p>- moderada (em laranja) se possuir letras minúsculas e maiúsculas e números</p>
+		<p>- forte (em verde) se possuir letras minúsculas e maiúsculas, números e caracteres especiais (@, #, !, $, %, &, *, (, ), -, +, ., =)</p>
+		<input type="password" placeholder="Digite a senha" id="entrada9">
+		<p id="resultado9"></p>
+	</div>
+</body>
+</html>
+
